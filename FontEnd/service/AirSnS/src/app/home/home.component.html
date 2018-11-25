@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-4">
+    <app-add-or-update-warehouse (warehouseCreated)="createOrUpdateWarehouse($event)" [warehouseInfo]="currentwarehouse"></app-add-or-update-warehouse>
+  </div>
+  <div class="col-md-8">
+    <app-grid-warehouse [warehouseData]="warehouseData" (editClicked)="editClicked($event)" (newClicked)="newClicked($event)" (deleteClicked)="deleteClicked($event)"></app-grid-warehouse>
+  </div>
+</div>

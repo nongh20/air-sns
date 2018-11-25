@@ -1,0 +1,5 @@
+Migrations database:
+Add-Migration Initial
+Add-Migration
+Remove-Migration
+Update-Database

@@ -1,0 +1,59 @@
+https://material.angularjs.org/latest/
+https://malcoded.com/posts/angular-fundamentals-modules
+https://coderwall.com/p/y0zkiw/building-large-apps-with-angularjs
+https://www.technouz.com/4644/angular-5-app-structure-multiple-modules/
+
+https://colorlib.com/wp/angularjs-website-templates/
+https://colorlib.com/wp/angularjs-admin-templates/
+https://cssauthor.com/responsive-free-angularjs-admin-themes/
+https://colorlib.com/wp/free-html5-admin-dashboard-templates/
+https://www.free-css.com
+
+
+FrontEnd:
+ng new AirSnS
+
+npm install bootstrap --save
+
+Lodash
+JavaScript utility library delivering modularity, performance & extras.
+https://lodash.com/
+
+AngularJS
+https://cli.angular.io/
+
+
+Modules:
+Components:
+Services:
+
+[(ngModel)]: two-way binding
+
+npm install -g @angular/cli
+ng new [ProjetName]
+
+ng generate
+Scaffold    Usage
+Component   ng g component my-new-component
+Directive   ng g directive my-new-directive
+Pipe    ng g pipe my-new-pipe
+Service ng g service my-new-service
+**Class ng g class my-new-class**
+Guard   ng g guard my-new-guard
+Interface   ng g interface my-new-interface
+Enum    ng g enum my-new-enum
+Module  ng g module my-module
+
++ ng generate component [CompomentName]
++ ng generate service [Service name]
++ ng generate module [module name]
+
+
+ng serve
+ng test
+ng e2e
+ng build
+ng get/ng set
+ng doc
+ng xi18n
+ng update

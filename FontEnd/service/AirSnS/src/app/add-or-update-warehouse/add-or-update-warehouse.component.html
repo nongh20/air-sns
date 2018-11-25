@@ -1,0 +1,20 @@
+<div>
+  <h2 *ngIf="!warehouseInfo || warehouseInfo.id === undefined">Add record</h2>
+  <h2 *ngIf="warehouseInfo && warehouseInfo.id !== undefined">Update record (ID: )</h2>
+  <form>
+    <div class="form-group">
+      <label for="date-input">Name:</label>
+      <input type="text" id="name-input" [(ngModel)]="warehouseInfo.name" name="name" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="description-input">Description</label>
+      <input type="text" id="description-input" [(ngModel)]="warehouseInfo.description" name="description" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="size-input">Size</label>
+      <input type="text" id="size-input" [(ngModel)]="warehouseInfo.size" name="size" class="form-control" />
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addOrUpdateWarehouseRecord($event);">Save</button>
+
+  </form>
+</div>

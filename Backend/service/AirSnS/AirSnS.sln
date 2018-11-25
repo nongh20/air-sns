@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirSnS", "AirSnS\AirSnS.csproj", "{B33D1EAF-79C3-4CEB-BEE5-78CF18EE320C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirSnS.Data", "AirSnS.Data\AirSnS.Data.csproj", "{551427A1-42BE-4F6C-A070-07A564606A56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirSnS.Service", "AirSnS.Service\AirSnS.Service.csproj", "{7878CCC9-F5DB-42F4-BA16-BBA363970082}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B33D1EAF-79C3-4CEB-BEE5-78CF18EE320C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33D1EAF-79C3-4CEB-BEE5-78CF18EE320C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33D1EAF-79C3-4CEB-BEE5-78CF18EE320C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33D1EAF-79C3-4CEB-BEE5-78CF18EE320C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551427A1-42BE-4F6C-A070-07A564606A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551427A1-42BE-4F6C-A070-07A564606A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551427A1-42BE-4F6C-A070-07A564606A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551427A1-42BE-4F6C-A070-07A564606A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7878CCC9-F5DB-42F4-BA16-BBA363970082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7878CCC9-F5DB-42F4-BA16-BBA363970082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7878CCC9-F5DB-42F4-BA16-BBA363970082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7878CCC9-F5DB-42F4-BA16-BBA363970082}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {650A8DC3-05F9-44AF-AFB8-7064F89304CF}
+	EndGlobalSection
+EndGlobal

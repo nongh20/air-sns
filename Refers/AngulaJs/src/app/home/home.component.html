@@ -1,0 +1,9 @@
+﻿<h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered warehouse:</h3>
+<ul>
+    <li *ngFor="let warehouse of warehouses">
+        {{warehouse.name}}
+        - <a (click)="viewWarehouse(warehouse.id)" class="text-danger">Detail</a>
+    </li>
+</ul>
