@@ -9,7 +9,7 @@ import { WarehouseService, AuthenticationService } from '@app/_services';
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;
     currentUserSubscription: Subscription;
-    warehouses: Array<any>;
+    warehouses: any;
 
     constructor(
         private authenticationService: AuthenticationService,

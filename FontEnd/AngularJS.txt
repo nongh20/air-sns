@@ -9,6 +9,7 @@ https://cssauthor.com/responsive-free-angularjs-admin-themes/
 https://colorlib.com/wp/free-html5-admin-dashboard-templates/
 https://www.free-css.com
 
+https://medium.com/@cyrilletuzi/architecture-in-angular-projects-242606567e40
 
 FrontEnd:
 ng new AirSnS

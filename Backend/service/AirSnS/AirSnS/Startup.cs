@@ -19,6 +19,7 @@ using AutoMapper;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace AirSnS
 {
@@ -34,12 +35,6 @@ namespace AirSnS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();//.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddAutoMapper();
-
-            services.AddDbContext<AirSnSContext>(options =>
-                    options.UseNpgsql(Configuration.GetConnectionString("AirSnSContext")));
-
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -48,6 +43,19 @@ namespace AirSnS
                     .AllowAnyHeader()
                     .AllowCredentials());
             });
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        
+            //register the Swagger generator, defining one or more Swagger documents.
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
+            services.AddAutoMapper();
+
+            services.AddDbContext<AirSnSContext>(options =>
+                    options.UseNpgsql(Configuration.GetConnectionString("AirSnSContext")));
 
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -105,10 +113,18 @@ namespace AirSnS
                 app.UseHsts();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             app.UseHttpsRedirection();
-            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
+
+            app.UseCors("CorsPolicy");
+
             app.UseMvc();
         }
     }
