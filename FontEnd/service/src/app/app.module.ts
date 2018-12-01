@@ -12,7 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { UserLoginComponent } from './user/pages/login/user-login.component';
 import { UserRegisterComponent } from './user/pages/register/user-register.component';
 import { WarehouseSearchComponent } from './warehouse/pages/search/warehouse-search.component';
+import { WarehouseDetailComponent } from './warehouse/pages/detail/warehouse-detail.component';
 import { WarehouseRegisterComponent } from './warehouse/pages/register/warehouse-register.component';
+
+import { ContactComponent } from './our_company/pages/contact/contact.component';
 
 
 import { HeaderComponent } from './shared/header/header.component';
@@ -30,8 +33,11 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: UserLoginComponent},
   { path: 'register', component: UserRegisterComponent},
-  { path: 'warehouse/register', component: UserRegisterComponent},
-  { path: 'warehouse/search', component: WarehouseSearchComponent}
+  { path: 'warehouse/register', component: WarehouseRegisterComponent},
+  { path: 'warehouse/search', component: WarehouseSearchComponent},
+  { path: 'warehouse/detail', component: WarehouseDetailComponent},
+  { path: 'contact', component: ContactComponent},
+
 
 ];
 
@@ -42,12 +48,14 @@ const appRoutes: Routes = [
     UserLoginComponent,
     UserRegisterComponent,
     WarehouseSearchComponent,
+    WarehouseDetailComponent,
     WarehouseRegisterComponent,
     HeaderComponent,
     NavigationComponent,
     FooterComponent,
     GridWarehouseComponent,
-    AddOrUpdateWarehouseComponent
+    AddOrUpdateWarehouseComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,36 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              
+              "src/assets/js/jquery-3.2.1.min.js",
+              
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              
+              "src/assets/vendors/revolution/js/jquery.themepunch.tools.min.js",
+              "src/assets/vendors/revolution/js/jquery.themepunch.revolution.min.js",
+              "src/assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js",
+              "src/assets/vendors/revolution/js/extensions/revolution.extension.video.min.js",
+              "src/assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js",
+              "src/assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js",
+              "src/assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js",
+              "src/assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js",
+              
+              "src/assets/vendors/counterup/jquery.waypoints.min.js",
+              "src/assets/vendors/counterup/jquery.counterup.min.js",
+              "src/assets/vendors/owl-carousel/owl.carousel.min.js",
+              "src/assets/vendors/bootstrap-selector/js/bootstrap-select.min.js",
+              "src/assets/vendors/image-dropdown/jquery.dd.min.js",
+              "src/assets/js/smoothscroll.js",
+              "src/assets/vendors/isotope/imagesloaded.pkgd.min.js",
+              "src/assets/vendors/isotope/isotope.pkgd.min.js",
+              "src/assets/vendors/magnify-popup/jquery.magnific-popup.min.js",
+              "src/assets/vendors/vertical-slider/js/jQuery.verticalCarousel.js",
+              "src/assets/vendors/jquery-ui/jquery-ui.js",
+              
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {

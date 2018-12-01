@@ -1,8 +1,58 @@
-<div class="row">
-  <div class="col-md-4">
-    <app-add-or-update-warehouse (warehouseCreated)="createOrUpdateWarehouse($event)" [warehouseInfo]="currentwarehouse"></app-add-or-update-warehouse>
+<section class="register_area p_100">
+  <div class="container">
+    <div class="register_inner">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="billing_details">
+            <h2 class="reg_title">Warehouse Register</h2>
+            <form class="billing_inner row">
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="name">Name <span>*</span></label>
+                  <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="">
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="address">Address <span>*</span></label>
+                  <input type="text" class="form-control" id="address" aria-describedby="address">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="ctown">City / Town <span>*</span></label>
+                    
+                    <select class="selectpicker" id="ctown">
+                      <option>Ha Noi</option>
+                      <option>Da Nang</option>
+                      <option>TP HCM</option>
+                    </select>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="email">Email <span>*</span></label>
+                  <input type="email" class="form-control" id="email" aria-describedby="email">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="phone">Phone <span>*</span></label>
+                  <input type="text" class="form-control" id="phone" aria-describedby="phone">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="descrition">Descrition <span>*</span></label>
+                  <textarea class="form-control" id="descrition" rows="3"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-8">
-    <app-grid-warehouse [warehouseData]="warehouseData" (editClicked)="editClicked($event)" (newClicked)="newClicked($event)" (deleteClicked)="deleteClicked($event)"></app-grid-warehouse>
-  </div>
-</div>
+</section>
