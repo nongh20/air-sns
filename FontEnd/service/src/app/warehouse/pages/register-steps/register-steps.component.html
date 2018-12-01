@@ -1,0 +1,189 @@
+<section class="register_area p_100">
+  <div class="container">
+    <div class="register_inner">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="billing_details">
+            <h2 class="reg_title">Thêm mới kho</h2>
+            <hr />
+            <div style="height: 600px;">
+              <form-wizard (onStepChanged)="onStepChanged($event)">
+                <wizard-step [title]="'Tổng quan'" [isValid]="emailForm.form.valid" (onNext)="onStep1Next($event)">
+                  <h1>Tổng quan</h1>
+
+                  <form #emailForm="ngForm" class="billing_inner row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="name">Tên <span>*</span></label>
+                        <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="ctype">Loại kho <span>*</span></label>
+
+                        <select class="selectpicker" id="type">
+                          <option>Kho công nghiệp</option>
+                          <option>Kho lạnh</option>
+                          <option>Kho sản xuất</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="size">Kích thước <span>*</span></label>
+                        <input type="text" class="form-control" id="size" aria-describedby="size" placeholder="">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="area">Diện tích <span>*</span></label>
+                        <input type="text" class="form-control" id="area" aria-describedby="area" placeholder="">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 row">
+                      <div class="form-group col-lg-4">
+                        <label for="ctown1">Thành phố / Tỉnh <span>*</span></label>
+
+                        <select class="selectpicker" id="ctown1">
+                          <option>Ha Noi</option>
+                          <option>Da Nang</option>
+                          <option>TP HCM</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-lg-4">
+                        <label for="ctown2">Quận / Huyện <span>*</span></label>
+
+                        <select class="selectpicker" id="ctown2">
+                          <option>Ha Noi</option>
+                          <option>Da Nang</option>
+                          <option>TP HCM</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-lg-4">
+                        <label for="ctown3">Phường / Xã <span>*</span></label>
+
+                        <select class="selectpicker" id="ctown3">
+                          <option>Ha Noi</option>
+                          <option>Da Nang</option>
+                          <option>TP HCM</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="address">Địa chỉ <span>*</span></label>
+                        <input type="text" class="form-control" id="address" aria-describedby="address">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" class="form-control" id="email" aria-describedby="email">
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="phone">Điện thoại <span>*</span></label>
+                        <input type="text" class="form-control" id="phone" aria-describedby="phone">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="rule">Quy tắc <span>*</span></label>
+                        <textarea class="form-control" id="rule" rows="3"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="guide">Hướng dẫn sử dụng <span>*</span></label>
+                        <textarea class="form-control" id="guide" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="descrition">Mô tả <span>*</span></label>
+                        <textarea class="form-control" id="descrition" rows="3"></textarea>
+                      </div>
+                    </div>
+                  </form>
+                </wizard-step>
+
+                <wizard-step [title]="'Giá và chính sách'" [showNext]="step2.showNext" [showPrev]="step2.showPrev"
+                  (onNext)="onStep2Next($event)">
+                  <h1>Giá và chính sách</h1>
+                  <form class="billing_inner row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="basicPrice">Giá cơ bản <span>*</span></label>
+                        <input type="text" class="form-control" id="basicPrice" aria-describedby="basicPrice" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="longPrice">Giá dài hạn <span>*</span></label>
+                        <input type="text" class="form-control" id="longPrice" aria-describedby="longPrice" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="moreFee">Chi phí bổ sung <span>*</span></label>
+                        <input type="text" class="form-control" id="moreFee" aria-describedby="moreFee" placeholder="">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label for="returnPolicy">Điều khoản và chính sách hủy:<span>*</span></label>
+                        <textarea class="form-control" id="returnPolicy" rows="3"></textarea>
+                      </div>
+                    </div>
+
+                  </form>
+                </wizard-step>
+
+                <wizard-step [title]="'Tiện nghi'" (onNext)="onStep3Next($event)">
+                  <h1>Tiện nghi</h1>
+                  
+                  
+                </wizard-step>
+
+                <wizard-step [title]="'Lịch'" (onNext)="onStep4Next($event)">
+                  <h1>Lịch</h1>
+                  
+                </wizard-step>
+
+                <wizard-step [title]="'Hình ảnh'" (onNext)="onStep5Next($event)">
+                    <h1>Hình ảnh</h1>
+                    
+                  </wizard-step>
+
+                <wizard-step [title]="'Kết thúc'" (onComplete)="onComplete($event)">
+                  <div [ngSwitch]="isCompleted">
+                    <div *ngSwitchDefault>
+                      <h1>Kết thúc</h1>
+                      
+                    </div>
+                    <div *ngSwitchCase="true">
+                        <h1>Kết thúc</h1>
+                    </div>
+                  </div>
+                </wizard-step>
+              </form-wizard>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

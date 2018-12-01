@@ -6,6 +6,8 @@ import { DecimalPipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import * as _ from 'lodash';
+import { FileUploadModule } from 'ng2-file-upload';
+import { FormWizardModule } from 'angular-wizard-form';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +16,7 @@ import { UserRegisterComponent } from './user/pages/register/user-register.compo
 import { WarehouseSearchComponent } from './warehouse/pages/search/warehouse-search.component';
 import { WarehouseDetailComponent } from './warehouse/pages/detail/warehouse-detail.component';
 import { WarehouseRegisterComponent } from './warehouse/pages/register/warehouse-register.component';
+import { RegisterStepsComponent } from './warehouse/pages/register-steps/register-steps.component';
 
 import { ContactComponent } from './our_company/pages/contact/contact.component';
 
@@ -34,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'login', component: UserLoginComponent},
   { path: 'register', component: UserRegisterComponent},
   { path: 'warehouse/register', component: WarehouseRegisterComponent},
+  { path: 'warehouse/register-steps', component: RegisterStepsComponent},
   { path: 'warehouse/search', component: WarehouseSearchComponent},
   { path: 'warehouse/detail', component: WarehouseDetailComponent},
   { path: 'contact', component: ContactComponent},
@@ -50,6 +54,7 @@ const appRoutes: Routes = [
     WarehouseSearchComponent,
     WarehouseDetailComponent,
     WarehouseRegisterComponent,
+    RegisterStepsComponent,
     HeaderComponent,
     NavigationComponent,
     FooterComponent,
@@ -61,7 +66,9 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule,
+    FormWizardModule
   ],
   providers: [
     UserService,
