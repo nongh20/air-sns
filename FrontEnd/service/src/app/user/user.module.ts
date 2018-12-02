@@ -7,6 +7,9 @@ import { UserRegisterComponent } from './pages/register/user-register.component'
   declarations: [UserLoginComponent, UserRegisterComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    UserLoginComponent, UserRegisterComponent
   ]
 })
 export class UserModule { }

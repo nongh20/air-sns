@@ -9,6 +9,9 @@ import { LayoutComponent } from './layout/layout.component';
   declarations: [HeaderComponent, FooterComponent, NavigationComponent, LayoutComponent],
   imports: [
     CommonModule
+  ],
+  exports:[
+    HeaderComponent, FooterComponent, NavigationComponent, LayoutComponent
   ]
 })
 export class SharedModule { }

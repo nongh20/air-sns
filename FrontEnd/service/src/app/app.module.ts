@@ -16,20 +16,25 @@ import { UserRegisterComponent } from './user/pages/register/user-register.compo
 import { WarehouseSearchComponent } from './warehouse/pages/search/warehouse-search.component';
 import { WarehouseDetailComponent } from './warehouse/pages/detail/warehouse-detail.component';
 import { WarehouseRegisterComponent } from './warehouse/pages/register/warehouse-register.component';
-import { RegisterStepsComponent } from './warehouse/pages/register-steps/register-steps.component';
+//import { RegisterStepsComponent } from './warehouse/pages/register-steps/register-steps.component';
 
 import { ContactComponent } from './our_company/pages/contact/contact.component';
 
 
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavigationComponent } from './shared/navigation/navigation.component';
+// import { HeaderComponent } from './shared/header/header.component';
+// import { FooterComponent } from './shared/footer/footer.component';
+// import { NavigationComponent } from './shared/navigation/navigation.component';
 
-import { GridWarehouseComponent } from './warehouse/components/grid-warehouse/grid-warehouse.component';
-import { AddOrUpdateWarehouseComponent } from './warehouse/components/add-or-update-warehouse/add-or-update-warehouse.component';
+// import { GridWarehouseComponent } from './warehouse/components/grid-warehouse/grid-warehouse.component';
+// import { AddOrUpdateWarehouseComponent } from './warehouse/components/add-or-update-warehouse/add-or-update-warehouse.component';
+
+import {SharedModule} from './shared/shared.module';
+import {WarehouseModule} from './warehouse/warehouse.module';
+import {UserModule} from './user/user.module';
 
 import { UserService } from './user/shared/user.service';
 import { WarehouseService } from './warehouse/shared/warehouse.service';
+import { from } from 'rxjs';
 
 
 const appRoutes: Routes = [
@@ -37,7 +42,7 @@ const appRoutes: Routes = [
   { path: 'login', component: UserLoginComponent},
   { path: 'register', component: UserRegisterComponent},
   { path: 'warehouse/register', component: WarehouseRegisterComponent},
-  { path: 'warehouse/register-steps', component: RegisterStepsComponent},
+  //{ path: 'warehouse/register-steps', component: RegisterStepsComponent},
   { path: 'warehouse/search', component: WarehouseSearchComponent},
   { path: 'warehouse/detail', component: WarehouseDetailComponent},
   { path: 'contact', component: ContactComponent},
@@ -49,17 +54,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    UserLoginComponent,
-    UserRegisterComponent,
-    WarehouseSearchComponent,
-    WarehouseDetailComponent,
-    WarehouseRegisterComponent,
-    RegisterStepsComponent,
-    HeaderComponent,
-    NavigationComponent,
-    FooterComponent,
-    GridWarehouseComponent,
-    AddOrUpdateWarehouseComponent,
     ContactComponent
   ],
   imports: [
@@ -68,7 +62,26 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     FileUploadModule,
-    FormWizardModule
+    FormWizardModule,
+
+    SharedModule,
+    WarehouseModule,
+    UserModule,
+
+    // UserLoginComponent,
+    // UserRegisterComponent,
+
+    // WarehouseSearchComponent,
+    // WarehouseDetailComponent,
+    // WarehouseRegisterComponent,
+    // RegisterStepsComponent,
+    // GridWarehouseComponent,
+    // AddOrUpdateWarehouseComponent,
+    
+    // HeaderComponent,
+    // NavigationComponent,
+    // FooterComponent,
+    
   ],
   providers: [
     UserService,
