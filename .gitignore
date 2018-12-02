@@ -4,8 +4,8 @@ Backend/service/AirSnS.Service/obj/
 Backend/service/AirSnS/.vs/
 Backend/service/AirSnS/bin/
 Backend/service/AirSnS/obj/
-FontEnd/service/node_modules/
-FontEnd/service/.vs/
+FrontEnd/service/node_modules/
+FrontEnd/service/.vs/
 Refers/
 *.DS_Store
 ## Ignore Visual Studio temporary files, build results, and
