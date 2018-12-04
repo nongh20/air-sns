@@ -1,0 +1,19 @@
+Install:
+Postgress
+Nodejs
+Asp.net MVC core
+Angluarjs
+
+Database:
+Create user: airsns_user/airsns_pw
+(Refer: https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/)
+Run CM in Nuget: Update-Database
+
+
+Backend: Asp.net MVC core
+
+
+
+Front End: Angluarjs
+npm install -g @angular/cli
+Run source: ng serve
