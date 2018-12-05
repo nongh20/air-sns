@@ -5,69 +5,91 @@
         <div class="col-lg-7">
           <div class="billing_details">
             <h2 class="reg_title">Thêm mới kho</h2>
-            <form class="billing_inner row">
+            <form class="billing_inner row" (ngSubmit)="onSubmit()" #warehouseForm="ngForm">
 
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="name">Tên <span>*</span></label>
-                  <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="">
+                  <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="" required
+                    [(ngModel)]="model.name" name="name" #name="ngModel">
+                </div>
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  Name is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
-                  <label for="ctype">Loại kho <span>*</span></label>
+                  <label for="type">Loại kho <span>*</span></label>
 
-                  <select class="selectpicker" id="type">
-                    <option>Kho công nghiệp</option>
-                    <option>Kho lạnh</option>
-                    <option>Kho sản xuất</option>
+                  <select class="selectpicker" id="type" required [(ngModel)]="model.type" name="type" #type="ngModel">
+                    <option value="">---</option>
+                    <option value="1">Kho công nghiệp</option>
+                    <option value="2">Kho lạnh</option>
+                    <option value="3">Kho sản xuất</option>
                   </select>
+                </div>
+                <div [hidden]="type.valid || type.pristine" class="alert alert-danger">
+                  Type is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="size">Kích thước <span>*</span></label>
-                  <input type="text" class="form-control" id="size" aria-describedby="size" placeholder="">
+                  <input type="text" class="form-control" id="size" aria-describedby="size" placeholder="" required
+                    [(ngModel)]="model.size" name="size" #size="ngModel">
+                </div>
+                <div [hidden]="size.valid || size.pristine" class="alert alert-danger">
+                  Size is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="area">Diện tích <span>*</span></label>
-                  <input type="text" class="form-control" id="area" aria-describedby="area" placeholder="">
+                  <input type="text" class="form-control" id="area" aria-describedby="area" placeholder="" required
+                    [(ngModel)]="model.area" name="area" #area="ngModel">
+                </div>
+                <div [hidden]="area.valid || area.pristine" class="alert alert-danger">
+                  Area is required
                 </div>
               </div>
 
               <div class="col-lg-12 row">
                 <div class="form-group col-lg-4">
-                  <label for="ctown1">Thành phố / Tỉnh <span>*</span></label>
+                  <label for="city_province">Thành phố / Tỉnh <span>*</span></label>
 
-                  <select class="selectpicker" id="ctown1">
-                    <option>Ha Noi</option>
-                    <option>Da Nang</option>
-                    <option>TP HCM</option>
+                  <select class="selectpicker" id="city_province" required [(ngModel)]="model.city_province" name="city_province"
+                    #city_province="ngModel">
+                    <option value="">---</option>
+                    <option value="1">Ha Noi</option>
+                    <option value="2">Da Nang</option>
+                    <option value="3">TP HCM</option>
                   </select>
                 </div>
 
                 <div class="form-group col-lg-4">
-                  <label for="ctown2">Quận / Huyện <span>*</span></label>
+                  <label for="district_town">Quận / Huyện <span>*</span></label>
 
-                  <select class="selectpicker" id="ctown2">
-                    <option>Ha Noi</option>
-                    <option>Da Nang</option>
-                    <option>TP HCM</option>
+                  <select class="selectpicker" id="district_town" required [(ngModel)]="model.district_town" name="district_town"
+                    #district_town="ngModel">
+                    <option value="">---</option>
+                    <option value="1">Ha Noi</option>
+                    <option value="2">Da Nang</option>
+                    <option value="3">TP HCM</option>
                   </select>
                 </div>
 
                 <div class="form-group col-lg-4">
-                  <label for="ctown3">Phường / Xã <span>*</span></label>
+                  <label for="ward_commune">Phường / Xã <span>*</span></label>
 
-                  <select class="selectpicker" id="ctown3">
-                    <option>Ha Noi</option>
-                    <option>Da Nang</option>
-                    <option>TP HCM</option>
+                  <select class="selectpicker" id="ward_commune" required [(ngModel)]="model.ward_commune" name="ward_commune"
+                    #ward_commune="ngModel">
+                    <option value="">---</option>
+                    <option value="1">Ha Noi</option>
+                    <option value="2">Da Nang</option>
+                    <option value="3">TP HCM</option>
                   </select>
                 </div>
               </div>
@@ -75,46 +97,71 @@
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="address">Địa chỉ <span>*</span></label>
-                  <input type="text" class="form-control" id="address" aria-describedby="address">
+                  <input type="text" class="form-control" id="address" aria-describedby="address" required [(ngModel)]="model.address"
+                    name="address" #address="ngModel">
+                </div>
+                <div [hidden]="address.valid || address.pristine" class="alert alert-danger">
+                  Address is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="email">Email <span>*</span></label>
-                  <input type="email" class="form-control" id="email" aria-describedby="email">
+                  <input type="email" class="form-control" id="email" aria-describedby="email" required [(ngModel)]="model.email"
+                    name="email" #email="ngModel">
+                </div>
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                  Email is required
                 </div>
               </div>
+
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="phone">Điện thoại <span>*</span></label>
-                  <input type="text" class="form-control" id="phone" aria-describedby="phone">
+                  <input type="text" class="form-control" id="phone" aria-describedby="phone" required [(ngModel)]="model.phone"
+                    name="phone" #phone="ngModel">
+                </div>
+                <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+                  Phone is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="rule">Quy tắc <span>*</span></label>
-                  <textarea class="form-control" id="rule" rows="3"></textarea>
+                  <textarea class="form-control" id="rule" rows="3" required [(ngModel)]="model.rule" name="rule" #rule="ngModel"></textarea>
+                </div>
+                <div [hidden]="rule.valid || rule.pristine" class="alert alert-danger">
+                  Rule is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="guide">Hướng dẫn sử dụng <span>*</span></label>
-                  <textarea class="form-control" id="guide" rows="3"></textarea>
+                  <textarea class="form-control" id="guide" rows="3" required [(ngModel)]="model.guide" name="guide"
+                    #guide="ngModel"></textarea>
+                </div>
+                <div [hidden]="guide.valid || guide.pristine" class="alert alert-danger">
+                  Guide is required
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="form-group">
                   <label for="descrition">Mô tả <span>*</span></label>
-                  <textarea class="form-control" id="descrition" rows="3"></textarea>
+                  <textarea class="form-control" id="descrition" rows="3" required [(ngModel)]="model.descrition" name="descrition"
+                    #descrition="ngModel"></textarea>
+                </div>
+                <div [hidden]="descrition.valid || descrition.pristine" class="alert alert-danger">
+                  Descrition is required
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div class="form-group">
-                  <button type="submit" value="submit" class="btn subs_btn form-control">Đăng ký</button>
+                  <button type="submit" value="submit" class="btn subs_btn form-control" [disabled]="!warehouseForm.form.valid">Đăng
+                    ký</button>
                 </div>
               </div>
             </form>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { WarehouseSearchComponent } from './pages/search/warehouse-search.component';
 import { WarehouseRegisterComponent } from './pages/register/warehouse-register.component';
 import { WarehouseDetailComponent } from './pages/detail/warehouse-detail.component';
@@ -18,7 +19,8 @@ import { WarehouseDetailComponent } from './pages/detail/warehouse-detail.compon
     // AddOrUpdateWarehouseComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:[
     WarehouseSearchComponent, 

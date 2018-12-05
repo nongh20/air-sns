@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { WarehouseService } from '../../shared/warehouse.service';
 
@@ -13,25 +14,20 @@ import * as _ from 'lodash';
 })
 export class WarehouseRegisterComponent implements OnInit {
 
-  public warehouseData: Array<any>;
-  public currentwarehouse: any;
+  private warehouseData: Array<any>;
+  private model: any;
 
   constructor(private warehouseService: WarehouseService) {
     warehouseService.get().subscribe((data: any) => this.warehouseData = data);
 
-    this.currentwarehouse = this.setInitialValuesForWarehouseData();
+    this.model = this.setInitialValuesForWarehouseData();
   }
 
   ngOnInit() {
   }
 
   private setInitialValuesForWarehouseData() {
-    return {
-      id: undefined,
-      name: '',
-      description: '',
-      size: ''
-    }
+    return {};
   }
 
   public createOrUpdateWarehouse = function (warehouse: any) {
@@ -51,15 +47,15 @@ export class WarehouseRegisterComponent implements OnInit {
       );
     }
 
-    this.currentwarehouse = this.setInitialValuesForWarehouseData();
+    this.model = this.setInitialValuesForWarehouseData();
   };
 
   public editClicked = function (record) {
-    this.currentwarehouse = record;
+    this.model = record;
   };
 
   public newClicked = function () {
-    this.currentwarehouse = this.setInitialValuesForWarehouseData();
+    this.model = this.setInitialValuesForWarehouseData();
   };
 
   public deleteClicked(record) {
@@ -67,6 +63,11 @@ export class WarehouseRegisterComponent implements OnInit {
     this.warehouseService.remove(record).subscribe(
       result => this.warehouseData.splice(deleteIndex, 1)
     );
+  }
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.model);
   }
 
 }

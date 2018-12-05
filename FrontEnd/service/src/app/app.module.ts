@@ -51,11 +51,6 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ContactComponent
-  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
@@ -66,23 +61,14 @@ const appRoutes: Routes = [
 
     SharedModule,
     WarehouseModule,
-    UserModule,
-
-    // UserLoginComponent,
-    // UserRegisterComponent,
-
-    // WarehouseSearchComponent,
-    // WarehouseDetailComponent,
-    // WarehouseRegisterComponent,
-    // RegisterStepsComponent,
-    // GridWarehouseComponent,
-    // AddOrUpdateWarehouseComponent,
-    
-    // HeaderComponent,
-    // NavigationComponent,
-    // FooterComponent,
-    
+    UserModule
   ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ContactComponent
+  ],
+  
   providers: [
     UserService,
     WarehouseService
