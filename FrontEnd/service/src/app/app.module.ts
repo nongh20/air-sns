@@ -44,7 +44,7 @@ const appRoutes: Routes = [
   { path: 'login', component: UserLoginComponent},
   { path: 'register', component: UserRegisterComponent},
   { path: 'warehouse/register', component: WarehouseRegisterComponent},
-  { path: 'warehouse/edit/:Id', component: WarehouseEditComponent},
+  { path: 'warehouse/edit/:id', component: WarehouseEditComponent},
   { path: 'warehouse/list', component: WarehouseListComponent},
   //{ path: 'warehouse/register-steps', component: RegisterStepsComponent},
   { path: 'warehouse/search', component: WarehouseSearchComponent},

@@ -49,15 +49,15 @@ export class WarehouseListComponent implements OnInit {
     this.selectedWarehouse = this.setInitialValuesForWarehouseData();
   };
 
-  public editClicked = function (record) {
-    this.selectedWarehouse = record;
+  public edit = function (record) {
+    this.router.navigate(['/warehouse/edit/'+ record.id]);
   };
 
   public newClicked = function () {
     this.selectedWarehouse = this.setInitialValuesForWarehouseData();
   };
 
-  public deleteClicked(record) {
+  public delete(record) {
     const deleteIndex = _.findIndex(this.warehouseList, { id: record.id });
     this.warehouseService.remove(record).subscribe(
       result => this.warehouseList.splice(deleteIndex, 1)

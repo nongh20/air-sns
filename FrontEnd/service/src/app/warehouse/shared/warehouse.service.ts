@@ -20,6 +20,11 @@ export class WarehouseService {
     return this.http.get(this.accessPointUrl, { headers: this.headers });
   }
 
+  public getById(id) {
+    // Get all warehouse data
+    return this.http.get(this.accessPointUrl + '/' + id, { headers: this.headers });
+  }
+
   public add(warehouse) {
     return this.http.post(this.accessPointUrl, warehouse, { headers: this.headers });
   }

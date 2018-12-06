@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { WarehouseService } from '../../shared/warehouse.service';
 
-import * as _ from 'lodash';
-
 @Component({
   selector: 'app-warehouse-register',
   templateUrl: './warehouse-register.component.html',
@@ -12,29 +10,23 @@ import * as _ from 'lodash';
 })
 export class WarehouseRegisterComponent implements OnInit {
 
-  private warehouseData: Array<any>;
   private model: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private warehouseService: WarehouseService) {
-    warehouseService.get().subscribe((data: any) => this.warehouseData = data);
 
-    this.model = this.setInitialValuesForWarehouseData();
+    this.model = {};
   }
 
   ngOnInit() {
   }
 
-  private setInitialValuesForWarehouseData() {
-    return {};
-  }
-
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.model);
-    if(this.model.Id){
+    if(this.model.id){
       this.warehouseService.update(this.model).subscribe(
         //warehouseRecord => this.warehouseData.push(warehouse)
       );  

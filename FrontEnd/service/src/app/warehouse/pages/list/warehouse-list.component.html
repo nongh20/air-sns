@@ -21,7 +21,7 @@
               <tbody>
                 <tr *ngFor="let warehouse of warehouseList">
                   <th scope="row">
-                    
+
                   </th>
                   <td>
                     <div class="media">
@@ -43,7 +43,8 @@
                     <p>{{warehouse.address}}</p>
                   </td>
                   <td>
-                    <p></p>
+                    <a href="#" (click)="edit(warehouse)">Edit</a>
+                    <a href="#" (click)="delete(warehouse)">Delete</a>
                   </td>
                 </tr>
 

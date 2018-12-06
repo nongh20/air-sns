@@ -19,6 +19,10 @@ namespace AirSnS.Models
 
         public string Address { get; set; }
 
+        public string Phone { get; set; }
+
+        public string Email { get; set; }
+
         public string CityProvince { get; set; }
 
         public string DistrictTown { get; set; }
@@ -36,6 +40,8 @@ namespace AirSnS.Models
         public string Volume { get; set; }
 
         public string Guide { get; set; }
+
+        public string Rule { get; set; }
 
         public string Price { get; set; }
 

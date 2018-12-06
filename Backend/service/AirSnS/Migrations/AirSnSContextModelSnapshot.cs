@@ -54,6 +54,8 @@ namespace AirSnS.Migrations
 
                     b.Property<string>("DistrictTown");
 
+                    b.Property<string>("Email");
+
                     b.Property<string>("Facilities");
 
                     b.Property<string>("Guide");
@@ -62,11 +64,15 @@ namespace AirSnS.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("Phone");
+
                     b.Property<string>("Price");
 
                     b.Property<string>("PriceUnit");
 
                     b.Property<string>("ReturnPolicy");
+
+                    b.Property<string>("Rule");
 
                     b.Property<string>("Size");
 

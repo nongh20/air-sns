@@ -56,8 +56,8 @@
                 </div>
               </div>
 
-              <div class="col-lg-12">
-                <div class="form-group col-lg-8">
+              <div class="col-lg-12 row">
+                <div class="form-group col-lg-5">
                   <div class="form-group">
                     <label for="price">Giá <span>*</span></label>
                     <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="" required
@@ -67,16 +67,17 @@
                     Price is required
                   </div>
                 </div>
-                <div class="form-group col-lg-4">
-                    <select class="selectpicker" id="priceUnit" required [(ngModel)]="model.priceUnit" name="priceUnit"
+                <div class="form-group col-lg-5">
+                    <label for="priceUnit">Loại tiền <span>*</span></label>
+                  <select class="selectpicker" id="priceUnit" required [(ngModel)]="model.priceUnit" name="priceUnit"
                     #priceUnit="ngModel">
                     <option value="">---</option>
                     <option value="1">USD</option>
                     <option value="2">VND</option>
                   </select>
                   <div [hidden]="priceUnit.valid || priceUnit.pristine" class="alert alert-danger">
-                      Price Unit is required
-                    </div>
+                    Price Unit is required
+                  </div>
                 </div>
               </div>
 
@@ -173,11 +174,11 @@
               </div>
               <div class="col-lg-12">
                 <div class="form-group">
-                  <label for="descrition">Mô tả <span>*</span></label>
-                  <textarea class="form-control" id="descrition" rows="3" required [(ngModel)]="model.descrition" name="descrition"
-                    #descrition="ngModel"></textarea>
+                  <label for="description">Mô tả <span>*</span></label>
+                  <textarea class="form-control" id="description" rows="3" required [(ngModel)]="model.description"
+                    name="description" #description="ngModel"></textarea>
                 </div>
-                <div [hidden]="descrition.valid || descrition.pristine" class="alert alert-danger">
+                <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
                   Descrition is required
                 </div>
               </div>
