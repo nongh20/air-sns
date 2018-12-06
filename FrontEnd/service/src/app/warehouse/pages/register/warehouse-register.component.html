@@ -47,21 +47,45 @@
 
               <div class="col-lg-12">
                 <div class="form-group">
-                  <label for="area">Diện tích <span>*</span></label>
-                  <input type="text" class="form-control" id="area" aria-describedby="area" placeholder="" required
-                    [(ngModel)]="model.area" name="area" #area="ngModel">
+                  <label for="volume">Diện tích <span>*</span></label>
+                  <input type="text" class="form-control" id="volume" aria-describedby="volume" placeholder="" required
+                    [(ngModel)]="model.volume" name="volume" #volume="ngModel">
                 </div>
-                <div [hidden]="area.valid || area.pristine" class="alert alert-danger">
-                  Area is required
+                <div [hidden]="volume.valid || volume.pristine" class="alert alert-danger">
+                  Volume is required
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group col-lg-8">
+                  <div class="form-group">
+                    <label for="price">Giá <span>*</span></label>
+                    <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="" required
+                      [(ngModel)]="model.price" name="price" #price="ngModel">
+                  </div>
+                  <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+                    Price is required
+                  </div>
+                </div>
+                <div class="form-group col-lg-4">
+                    <select class="selectpicker" id="priceUnit" required [(ngModel)]="model.priceUnit" name="priceUnit"
+                    #priceUnit="ngModel">
+                    <option value="">---</option>
+                    <option value="1">USD</option>
+                    <option value="2">VND</option>
+                  </select>
+                  <div [hidden]="priceUnit.valid || priceUnit.pristine" class="alert alert-danger">
+                      Price Unit is required
+                    </div>
                 </div>
               </div>
 
               <div class="col-lg-12 row">
                 <div class="form-group col-lg-4">
-                  <label for="city_province">Thành phố / Tỉnh <span>*</span></label>
+                  <label for="cityProvince">Thành phố / Tỉnh <span>*</span></label>
 
-                  <select class="selectpicker" id="city_province" required [(ngModel)]="model.city_province" name="city_province"
-                    #city_province="ngModel">
+                  <select class="selectpicker" id="cityProvince" required [(ngModel)]="model.cityProvince" name="cityProvince"
+                    #cityProvince="ngModel">
                     <option value="">---</option>
                     <option value="1">Ha Noi</option>
                     <option value="2">Da Nang</option>
@@ -70,10 +94,10 @@
                 </div>
 
                 <div class="form-group col-lg-4">
-                  <label for="district_town">Quận / Huyện <span>*</span></label>
+                  <label for="districtTown">Quận / Huyện <span>*</span></label>
 
-                  <select class="selectpicker" id="district_town" required [(ngModel)]="model.district_town" name="district_town"
-                    #district_town="ngModel">
+                  <select class="selectpicker" id="districtTown" required [(ngModel)]="model.districtTown" name="districtTown"
+                    #districtTown="ngModel">
                     <option value="">---</option>
                     <option value="1">Ha Noi</option>
                     <option value="2">Da Nang</option>
@@ -82,10 +106,10 @@
                 </div>
 
                 <div class="form-group col-lg-4">
-                  <label for="ward_commune">Phường / Xã <span>*</span></label>
+                  <label for="wardCommune">Phường / Xã <span>*</span></label>
 
-                  <select class="selectpicker" id="ward_commune" required [(ngModel)]="model.ward_commune" name="ward_commune"
-                    #ward_commune="ngModel">
+                  <select class="selectpicker" id="wardCommune" required [(ngModel)]="model.wardCommune" name="wardCommune"
+                    #wardCommune="ngModel">
                     <option value="">---</option>
                     <option value="1">Ha Noi</option>
                     <option value="2">Da Nang</option>

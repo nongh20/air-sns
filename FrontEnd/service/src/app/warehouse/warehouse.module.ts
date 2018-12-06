@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { WarehouseSearchComponent } from './pages/search/warehouse-search.component';
 import { WarehouseRegisterComponent } from './pages/register/warehouse-register.component';
 import { WarehouseDetailComponent } from './pages/detail/warehouse-detail.component';
+import { WarehouseListComponent } from './pages/list/warehouse-list.component';
+import { WarehouseEditComponent } from './pages/edit/warehouse-edit.component';
+import { WarehouseFormComponent } from './components/warehouse-form/warehouse-form.component';
 //import { RegisterStepsComponent } from './pages/register-steps/register-steps.component';
 
 // import { GridWarehouseComponent } from './components/grid-warehouse/grid-warehouse.component';
@@ -13,7 +16,10 @@ import { WarehouseDetailComponent } from './pages/detail/warehouse-detail.compon
   declarations: [
     WarehouseSearchComponent, 
     WarehouseRegisterComponent, 
-    WarehouseDetailComponent,
+    WarehouseDetailComponent, 
+    WarehouseListComponent, 
+    WarehouseEditComponent,
+    WarehouseFormComponent,
     //RegisterStepsComponent,
     // GridWarehouseComponent,
     // AddOrUpdateWarehouseComponent

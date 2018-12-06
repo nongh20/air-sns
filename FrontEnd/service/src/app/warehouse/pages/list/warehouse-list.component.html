@@ -1,0 +1,57 @@
+<!--================Shopping Cart Area =================-->
+<section class="shopping_cart_area p_100">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="cart_product_list">
+          <h3 class="cart_single_title">Dach sách kho</h3>
+          <div class="table-responsive-md">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Kho</th>
+                  <th scope="col">Loại kho</th>
+                  <th scope="col">Kích thước</th>
+                  <th scope="col">Giá</th>
+                  <th scope="col">Địa chỉ</th>
+                  <th scope="col">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let warehouse of warehouseList">
+                  <th scope="row">
+                    
+                  </th>
+                  <td>
+                    <div class="media">
+                      <div class="media-body">
+                        <h4>{{warehouse.name}}</h4>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p>{{warehouse.type}}</p>
+                  </td>
+                  <td>
+                    <p>{{warehouse.size}}</p>
+                  </td>
+                  <td>
+                    <p>{{warehouse.price}}</p>
+                  </td>
+                  <td>
+                    <p>{{warehouse.address}}</p>
+                  </td>
+                  <td>
+                    <p></p>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -7,7 +7,10 @@ Angluarjs
 Database:
 Create user: airsns_user/airsns_pw
 (Refer: https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/)
-Run CM in Nuget: Update-Database
+Run CM in Nuget: 
+Add-Migration InitialDatabase
+Update-Database
+Drop-Database
 
 
 Backend: Asp.net MVC core

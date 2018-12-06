@@ -17,7 +17,13 @@ namespace AirSnS.Models
 
         public string Description { get; set; }
 
-        public string Location { get; set; }
+        public string Address { get; set; }
+
+        public string CityProvince { get; set; }
+
+        public string DistrictTown { get; set; }
+
+        public string WardCommune { get; set; }
 
         public string Map { get; set; }
 
@@ -29,13 +35,15 @@ namespace AirSnS.Models
 
         public string Volume { get; set; }
 
-        public string Guideline { get; set; }
+        public string Guide { get; set; }
 
         public string Price { get; set; }
 
+        public string PriceUnit { get; set; }
+
         public string Facilities { get; set; }
 
-        public string Authority { get; set; }
+        public string AuthorityDocs { get; set; }
 
         public string ReturnPolicy { get; set; }
 
