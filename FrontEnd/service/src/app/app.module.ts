@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DecimalPipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as _ from 'lodash';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FormWizardModule } from 'angular-wizard-form';
@@ -59,7 +59,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     FileUploadModule,
     FormWizardModule,
 
