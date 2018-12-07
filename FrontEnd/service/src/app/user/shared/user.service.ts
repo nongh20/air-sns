@@ -16,24 +16,28 @@ export class UserService {
   }
 
   public get() {
-    // Get all warehouse data
+    // Get all user data
     return this.http.get(this.accessPointUrl, { headers: this.headers });
   }
 
   public getById(id) {
-    // Get all warehouse data
+    // Get all user data
     return this.http.get(this.accessPointUrl + '/' + id, { headers: this.headers });
   }
 
-  public add(warehouse) {
-    return this.http.post(this.accessPointUrl, warehouse, { headers: this.headers });
+  public add(user) {
+    return this.http.post(this.accessPointUrl, user, { headers: this.headers });
   }
 
-  public remove(warehouse) {
-    return this.http.delete(this.accessPointUrl + '/' + warehouse.id, { headers: this.headers });
+  register(user) {
+    return this.http.post(`${this.accessPointUrl}/register`, user);
   }
 
-  public update(warehouse) {
-    return this.http.put(this.accessPointUrl + '/' + warehouse.id, warehouse, { headers: this.headers });
+  public remove(user) {
+    return this.http.delete(this.accessPointUrl + '/' + user.id, { headers: this.headers });
+  }
+
+  public update(user) {
+    return this.http.put(this.accessPointUrl + '/' + user.id, user, { headers: this.headers });
   }
 }

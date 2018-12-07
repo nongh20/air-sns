@@ -1,37 +1,49 @@
 <section class="login_area p_100">
   <div class="container">
-      <div class="login_inner">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="login_title">
-                      <h2>create account</h2>
-                      <p>Follow the steps below to create email account enjoy the great mail.com emailing experience. Vivamus tempus risus vel felis condimentum, non vehicula est iaculis.</p>
-                  </div>
-                  <form class="login_form row">
-                      <div class="col-lg-6 form-group">
-                          <input class="form-control" type="text" placeholder="Name">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                          <input class="form-control" type="email" placeholder="Email">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                          <input class="form-control" type="text" placeholder="User Name">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                          <input class="form-control" type="text" placeholder="Phone">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                          <input class="form-control" type="password" placeholder="Password">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                          <input class="form-control" type="password" placeholder="Re-Password">
-                      </div>
-                      <div class="col-lg-6 form-group">
-                          <button type="submit" value="submit" class="btn subs_btn form-control">register now</button>
-                      </div>
-                  </form>
-              </div>
+    <div class="login_inner">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="login_title">
+            <h2>Đăng ký tài khoản</h2>
           </div>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="login_form row">
+              <div class="col-lg-6 form-group">
+
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" placeholder="First Name"/>
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                  <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+              </div>
+              <div class="col-lg-6 form-group">
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" placeholder="Last Name"/>
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                  <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
+              </div>
+              <div class="col-lg-6 form-group">
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username"/>
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6 form-group">
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"/>
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+                  <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+              </div>
+              <div class="col-lg-6 form-group">
+                <input class="form-control" type="password" placeholder="Re-Password">
+              </div>
+              <div class="col-lg-6 form-group">
+                <button [disabled]="loading" ype="submit" value="submit" class="btn subs_btn form-control">Register</button>
+                <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              </div>
+            </form>
+        </div>
       </div>
+    </div>
   </div>
 </section>
