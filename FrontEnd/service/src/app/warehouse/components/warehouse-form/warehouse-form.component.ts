@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-warehouse-form',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarehouseFormComponent implements OnInit {
 
+  @Input() model: any;
+  @Output() onSubmitted = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.onSubmitted.emit(this.model);
+  }
 }

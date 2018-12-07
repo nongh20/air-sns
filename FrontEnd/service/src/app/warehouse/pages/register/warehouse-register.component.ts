@@ -10,7 +10,7 @@ import { WarehouseService } from '../../shared/warehouse.service';
 })
 export class WarehouseRegisterComponent implements OnInit {
 
-  private model: any;
+  model: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,20 +23,18 @@ export class WarehouseRegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmitted(model: any) {
     // TODO: Use EventEmitter with form value
-    console.warn(this.model);
-    if(this.model.id){
-      this.warehouseService.update(this.model).subscribe(
-        //warehouseRecord => this.warehouseData.push(warehouse)
+    console.warn(model);
+    if(model.id){
+      this.warehouseService.update(model).subscribe((data: any) => 
+        this.router.navigate(['/warehouse/list'])
       );  
     }else{
-      this.warehouseService.add(this.model).subscribe(
-        //warehouseRecord => this.warehouseData.push(warehouse)
+      this.warehouseService.add(model).subscribe((data: any) => 
+        this.router.navigate(['/warehouse/list'])
       );
     }
-    
-    this.router.navigate(['/warehouse/list']);
   }
 
 }

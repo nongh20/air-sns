@@ -10,7 +10,7 @@ import * as _ from 'lodash';
 })
 export class WarehouseListComponent implements OnInit {
 
-  private warehouseList: Array<any>;
+  warehouseList: Array<any>;
   private selectedWarehouse: any;
 
   constructor(

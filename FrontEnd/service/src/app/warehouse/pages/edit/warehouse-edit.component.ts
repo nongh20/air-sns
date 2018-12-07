@@ -10,38 +10,40 @@ import { WarehouseService } from '../../shared/warehouse.service';
 export class WarehouseEditComponent implements OnInit {
 
   private id: String;
-  private model: any;
+  model: any;
   
   constructor(
-    private route: ActivatedRoute,
+    private activeRoute: ActivatedRoute,
     private router: Router,
     private warehouseService: WarehouseService) {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.activeRoute.queryParams.subscribe(queryParams => {
+      // do something with the query params
+    });
+
+    this.activeRoute.params.subscribe(params => {
       console.log(params) //log the entire params object
       console.log(params['id']) //log the value of id
       this.id = params['id'];
 
-      this. warehouseService.getById(this.id).subscribe((data: any) => this.model = data);
+      this.warehouseService.getById(this.id).subscribe((data: any) => this.model = data);
     });
   }
 
-  onSubmit() {
+  onSubmitted(model: any) {
     // TODO: Use EventEmitter with form value
-    console.warn(this.model);
-    if(this.model.id){
-      this.warehouseService.update(this.model).subscribe(
-        //warehouseRecord => this.warehouseData.push(warehouse)
+    console.warn(model);
+    if(model.id){
+      this.warehouseService.update(model).subscribe((data: any) => 
+        this.router.navigate(['/warehouse/list'])
       );  
     }else{
-      this.warehouseService.add(this.model).subscribe(
-        //warehouseRecord => this.warehouseData.push(warehouse)
+      this.warehouseService.add(model).subscribe((data: any) => 
+        this.router.navigate(['/warehouse/list'])
       );
     }
-    
-    this.router.navigate(['/warehouse/list']);
   }
 
   
