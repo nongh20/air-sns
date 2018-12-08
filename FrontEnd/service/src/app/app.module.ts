@@ -11,6 +11,7 @@ import { FormWizardModule } from 'angular-wizard-form';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { UserLogoutComponent } from './user/pages/logout/user-logout.component';
 import { UserLoginComponent } from './user/pages/login/user-login.component';
 import { UserRegisterComponent } from './user/pages/register/user-register.component';
 import { WarehouseSearchComponent } from './warehouse/pages/search/warehouse-search.component';
@@ -41,6 +42,7 @@ import { from } from 'rxjs';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'logout', component: UserLogoutComponent},
   { path: 'login', component: UserLoginComponent},
   { path: 'register', component: UserRegisterComponent},
   { path: 'warehouse/register', component: WarehouseRegisterComponent},

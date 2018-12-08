@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from './user/shared/authentication.service';
 
 
 @Component({
@@ -8,4 +11,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AirSnS';
+
+  constructor(
+    private router: Router,
+    public  authenticationService: AuthenticationService
+  ) {
+  }
+
 }

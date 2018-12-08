@@ -11,12 +11,10 @@
                 <ul class="navbar-nav categories">
                     <li class="nav-item">
                         <select class="selectpicker">
-                            <option>Kho lạnh</option>
-                            <option>Kho công nghiệp</option>
-                            <option>Kho sản xuất</option>
-                            <option>Kho nguyên liệu</option>
-                            <option>Kho trung chuyển</option>
-                            <option>Kho phân phối</option>
+                            <option value="">---Loại kho---</option>
+                            <option value="1">Kho công nghiệp</option>
+                            <option value="2">Kho lạnh</option>
+                            <option value="3">Kho sản xuất</option>
                         </select>
                     </li>
                 </ul>
@@ -27,7 +25,7 @@
                             Trang chủ
                         </a>
                     </li>
-                    <li class="nav-item dropdown submenu">
+                    <li *ngIf="authenticationService.logged" class="nav-item dropdown submenu">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             Chủ kho <i class="fa fa-angle-down" aria-hidden="true"></i>

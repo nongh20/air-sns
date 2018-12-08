@@ -16,6 +16,7 @@ export class WarehouseEditComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private router: Router,
     private warehouseService: WarehouseService) {
+      this.model = {};
   }
 
   ngOnInit() {
