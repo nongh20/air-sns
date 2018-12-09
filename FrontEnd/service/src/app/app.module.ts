@@ -10,7 +10,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { FormWizardModule } from 'angular-wizard-form';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/pages/home.component';
 import { UserLogoutComponent } from './user/pages/logout/user-logout.component';
 import { UserLoginComponent } from './user/pages/login/user-login.component';
 import { UserRegisterComponent } from './user/pages/register/user-register.component';
@@ -20,26 +20,17 @@ import { WarehouseRegisterComponent } from './warehouse/pages/register/warehouse
 import { WarehouseEditComponent } from './warehouse/pages/edit/warehouse-edit.component';
 import { WarehouseListComponent } from './warehouse/pages/list/warehouse-list.component';
 //import { RegisterStepsComponent } from './warehouse/pages/register-steps/register-steps.component';
-
 import { ContactComponent } from './our_company/pages/contact/contact.component';
-
-
-// import { HeaderComponent } from './shared/header/header.component';
-// import { FooterComponent } from './shared/footer/footer.component';
-// import { NavigationComponent } from './shared/navigation/navigation.component';
-
-// import { GridWarehouseComponent } from './warehouse/components/grid-warehouse/grid-warehouse.component';
-// import { AddOrUpdateWarehouseComponent } from './warehouse/components/add-or-update-warehouse/add-or-update-warehouse.component';
 
 import {SharedModule} from './shared/shared.module';
 import {WarehouseModule} from './warehouse/warehouse.module';
 import {UserModule} from './user/user.module';
+import {HomeModule} from './home/home.module';
 import {CoreModule} from './core/core.module';
 
 import { AuthenticationService } from './core/authentication.service';
 import { UserService } from './user/shared/user.service';
 import { WarehouseService } from './warehouse/shared/warehouse.service';
-import { from } from 'rxjs';
 
 
 const appRoutes: Routes = [
@@ -55,7 +46,6 @@ const appRoutes: Routes = [
   { path: 'warehouse/detail', component: WarehouseDetailComponent},
   { path: 'contact', component: ContactComponent},
 
-
 ];
 
 @NgModule({
@@ -63,18 +53,19 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule, ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     FileUploadModule,
     FormWizardModule,
 
     CoreModule,
     SharedModule,
     WarehouseModule,
-    UserModule
+    UserModule,
+    HomeModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
     ContactComponent
   ],
   

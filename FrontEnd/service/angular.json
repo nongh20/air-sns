@@ -26,12 +26,12 @@
               "src/styles.css"
             ],
             "scripts": [
-              
+
               "src/assets/js/jquery-3.2.1.min.js",
-              
+
               "src/assets/js/popper.min.js",
               "src/assets/js/bootstrap.min.js",
-              
+
               "src/assets/vendors/revolution/js/jquery.themepunch.tools.min.js",
               "src/assets/vendors/revolution/js/jquery.themepunch.revolution.min.js",
               "src/assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js",
@@ -40,7 +40,7 @@
               "src/assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js",
               "src/assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js",
               "src/assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js",
-              
+
               "src/assets/vendors/counterup/jquery.waypoints.min.js",
               "src/assets/vendors/counterup/jquery.counterup.min.js",
               "src/assets/vendors/owl-carousel/owl.carousel.min.js",
@@ -52,18 +52,16 @@
               "src/assets/vendors/magnify-popup/jquery.magnific-popup.min.js",
               "src/assets/vendors/vertical-slider/js/jQuery.verticalCarousel.js",
               "src/assets/vendors/jquery-ui/jquery-ui.js",
-              
+
               "src/assets/js/theme.js"
             ]
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -73,13 +71,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
