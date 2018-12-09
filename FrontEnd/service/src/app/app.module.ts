@@ -34,7 +34,9 @@ import { ContactComponent } from './our_company/pages/contact/contact.component'
 import {SharedModule} from './shared/shared.module';
 import {WarehouseModule} from './warehouse/warehouse.module';
 import {UserModule} from './user/user.module';
+import {CoreModule} from './core/core.module';
 
+import { AuthenticationService } from './core/authentication.service';
 import { UserService } from './user/shared/user.service';
 import { WarehouseService } from './warehouse/shared/warehouse.service';
 import { from } from 'rxjs';
@@ -65,6 +67,7 @@ const appRoutes: Routes = [
     FileUploadModule,
     FormWizardModule,
 
+    CoreModule,
     SharedModule,
     WarehouseModule,
     UserModule
@@ -77,6 +80,7 @@ const appRoutes: Routes = [
   
   providers: [
     UserService,
+    AuthenticationService,
     WarehouseService
   ],
   bootstrap: [AppComponent]

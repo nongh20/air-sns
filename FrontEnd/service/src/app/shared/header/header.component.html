@@ -38,9 +38,9 @@
             <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
           </ul>
           <ul class="top_right">
-            <li *ngIf="!authenticationService.logged" class="user"><a href="login">Đăng nhập</a></li>
-            <li *ngIf="!authenticationService.logged" class="user"><a href="register">Đăng ký</a></li>
-            <li *ngIf="authenticationService.logged" class="user"><a href="logout">Đăng xuất</a></li>
+            <li *ngIf="!loggedIn" class="user"><a href="login">Đăng nhập</a></li>
+            <li *ngIf="!loggedIn" class="user"><a href="register">Đăng ký</a></li>
+            <li *ngIf="loggedIn" class="user"><a href="logout">Đăng xuất</a></li>
             
           </ul>
         </div>

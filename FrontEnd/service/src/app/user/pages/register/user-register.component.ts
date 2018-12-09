@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { UserService } from '../../shared/user.service';
-import { AuthenticationService } from '../../shared/authentication.service';
+import { AuthenticationService } from '../../../core/authentication.service';
 
 @Component({
   selector: 'app-user-register',

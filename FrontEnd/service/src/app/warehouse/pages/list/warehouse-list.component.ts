@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WarehouseService } from '../../shared/warehouse.service';
+import { AuthenticationService } from '../../../core/authentication.service';
+
 import * as _ from 'lodash';
 
 @Component({
@@ -16,7 +18,13 @@ export class WarehouseListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private warehouseService: WarehouseService) {
+    private warehouseService: WarehouseService,
+    private authenticationService: AuthenticationService) {
+
+    // redirect to home if already logged in
+    if (!this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
     warehouseService.get().subscribe((data: any) => this.warehouseList = data);
 
     this.selectedWarehouse = this.setInitialValuesForWarehouseData();
@@ -50,7 +58,7 @@ export class WarehouseListComponent implements OnInit {
   };
 
   public edit = function (record) {
-    this.router.navigate(['/warehouse/edit/'+ record.id]);
+    this.router.navigate(['/warehouse/edit/' + record.id]);
   };
 
   public newClicked = function () {

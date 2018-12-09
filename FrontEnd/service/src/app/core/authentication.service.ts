@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { environment } from './../../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,10 @@ export class AuthenticationService {
         this.currentUser = this.currentUserSubject.asObservable();
     }
 
+    public get isLoggedIn(): any {
+        return (this.currentUserSubject.value != null);
+    }
+
     public get currentUserValue(): any {
         return this.currentUserSubject.value;
     }
@@ -31,7 +35,6 @@ export class AuthenticationService {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.currentUserSubject.next(user);
-                    this.logged = true;
                 }
 
                 return user;
@@ -42,6 +45,5 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
-        this.logged = false;
     }
 }

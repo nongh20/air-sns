@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WarehouseService } from '../../shared/warehouse.service';
+import { AuthenticationService } from '../../../core/authentication.service';
 
 @Component({
   selector: 'app-warehouse-edit',
@@ -11,12 +12,19 @@ export class WarehouseEditComponent implements OnInit {
 
   private id: String;
   model: any;
-  
+
   constructor(
     private activeRoute: ActivatedRoute,
     private router: Router,
-    private warehouseService: WarehouseService) {
-      this.model = {};
+    private warehouseService: WarehouseService,
+    private authenticationService: AuthenticationService) {
+
+    // redirect to home if already logged in
+    if (!this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+
+    this.model = {};
   }
 
   ngOnInit() {
@@ -36,17 +44,17 @@ export class WarehouseEditComponent implements OnInit {
   onSubmitted(model: any) {
     // TODO: Use EventEmitter with form value
     console.warn(model);
-    if(model.id){
-      this.warehouseService.update(model).subscribe((data: any) => 
+    if (model.id) {
+      this.warehouseService.update(model).subscribe((data: any) =>
         this.router.navigate(['/warehouse/list'])
-      );  
-    }else{
-      this.warehouseService.add(model).subscribe((data: any) => 
+      );
+    } else {
+      this.warehouseService.add(model).subscribe((data: any) =>
         this.router.navigate(['/warehouse/list'])
       );
     }
   }
 
-  
+
 
 }
